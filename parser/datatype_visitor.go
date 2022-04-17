@@ -238,7 +238,7 @@ func (v *visitor) visitDimensionDataType(ctx *gen.DimensionDataTypeContext) Data
 		return with(Year)
 	case `DECIMAL`:
 		return with(Decimal)
-	case `Money`:
+	case `MONEY`:
 		return with(Decimal)
 	case `DEC`:
 		return with(Dec)
