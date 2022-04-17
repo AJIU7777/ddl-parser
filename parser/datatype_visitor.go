@@ -82,6 +82,7 @@ const (
 	MediumText
 	LongText
 	Money
+	Ip
 )
 
 // DataType describes the data type and value of the column in table
@@ -239,7 +240,7 @@ func (v *visitor) visitDimensionDataType(ctx *gen.DimensionDataTypeContext) Data
 	case `DECIMAL`:
 		return with(Decimal)
 	case `MONEY`:
-		return with(Decimal)
+		return with(Money)
 	case `DEC`:
 		return with(Dec)
 	case `FIXED`:
@@ -280,6 +281,8 @@ func (v *visitor) visitDimensionDataType(ctx *gen.DimensionDataTypeContext) Data
 		return with(Int4)
 	case `INT8`:
 		return with(Int8)
+	case `IP`:
+		return with(Ip)
 	}
 
 	v.panicWithExpr(ctx.GetTypeName(), "invalid data type: "+text)
