@@ -81,6 +81,7 @@ const (
 	Text
 	MediumText
 	LongText
+	Money
 )
 
 // DataType describes the data type and value of the column in table
@@ -236,6 +237,8 @@ func (v *visitor) visitDimensionDataType(ctx *gen.DimensionDataTypeContext) Data
 	case `YEAR`:
 		return with(Year)
 	case `DECIMAL`:
+		return with(Decimal)
+	case `Money`:
 		return with(Decimal)
 	case `DEC`:
 		return with(Dec)
